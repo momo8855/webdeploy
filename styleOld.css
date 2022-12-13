@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Cairo", sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 1fr;
+  height: 100vh;
+}
+
+.button {
+  border-radius: 15px;
+  border: 0;
+  padding: 3px 30px;
+  margin: 5px;
+  color: black;
+  cursor: pointer;
+}
+.sidebar {
+  padding: 5px 15px;
+  background-color: #0468bf;
+  color: white;
+}
+
+.sidebar--professor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding-right: 25px; */
+}
+
+.sidebar--professor--img {
+  /* padding-right: 10px; */
+  /* display: inline-block; */
+  /* position: relative; */
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.sidebar--professor--img img {
+  width: auto;
+  height: 100%;
+}
+
+.sidebar--header {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-bottom: 20px;
+}
+
+.sidebar--header img {
+  border-radius: 50%;
+  border: none;
+  width: 40px;
+  background-color: #fff;
+}
+
+.sidebar--header h1 {
+  padding-right: 7px;
+  display: inline;
+  font-size: 1rem;
+}
+
+.lec {
+  padding: 5px 15px;
+  background-color: azure;
+}
+
+.button {
+  border-radius: 15px;
+  border: 0;
+  padding: 3px 30px;
+  margin: 5px;
+  color: black;
+}
+
+/* subjects */
+
+.subjects--header {
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+.subjects--items {
+  list-style-type: none;
+}
+
+.subjects--items .item {
+  font-size: 0.75rem;
+  border-bottom: #fff solid 1px;
+  padding: 7px 5px;
+  cursor: pointer;
+}
+.subjects--items .item:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.subjects--button {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+/* subject section */
+.lec {
+  /* filter: blur(8px);
+    -webkit-filter: blur(3px); */
+}
+
+.subject {
+  /* filter: blur(8px);
+    -webkit-filter: blur(3px); */
+  padding: 5px 15px;
+  background-color: #c4dcf0;
+}
+
+.subject--header {
+  font-size: 1.3rem;
+  /* padding: 15px 0; */
+  /* margin: 25px 0; */
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+
+.subject--button-general {
+  background-color: #fff;
+  font-weight: 700;
+  margin-bottom: 30px;
+  width: 93%;
+  padding: 3px 15px;
+}
+
+.subject--lec {
+  list-style-type: none;
+  border: 2px solid #707070;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  padding: 5px 10px;
+  font-weight: 600;
+}
+
+.subject--lec--number {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.subject--button-generat {
+  width: 90%;
+  color: #fff !important;
+  /* border-radius: 50px; */
+  background-color: #0468bf;
+}
+
+.subject--button-generat:hover {
+  background-color: #032e53;
+}
+
+/* popup general */
+.popup--contaier {
+  z-index: 6666;
+  background-color: #fff;
+  border: black 2px solid;
+  border-radius: 40px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.popup--body {
+  margin: 5px 90px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup--body--header {
+  /* background-color: aqua; */
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.popup--body--input {
+  /* background-color: rgb(196, 195, 194); */
+  border-radius: 7px;
+  padding: 8px 10px;
+  margin: 10px 0;
+}
+
+.popup--button--container {
+  display: flex;
+  /* flex-direction: column; */
+  margin: 8px 0;
+}
+
+.button--container__primary {
+  padding: 8px 15px;
+  /* margin: 10px 5px; */
+  background-color: #0468bf;
+  color: #fff;
+  width: 100%;
+}
+.button--container__primary:hover {
+  background-color: #032e53;
+}
+
+.button--container__secondary {
+  padding: 8px 15px;
+  /* margin: 10px 5px; */
+  width: 100%;
+}
+.button--container__secondary:hover {
+  background-color: #c0bfbf;
+}
+
+/* popup contaier lec */
+.popup--contaier--add-lec {
+  display: none;
+}
+
+.create-lec--date--header {
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.create-lec--date--create {
+  padding: 5px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.create-lec--number {
+  /* text-align: center; */
+  margin-top: 0;
+}
+
+/* popup contaier subject */
+.popup--contaier--add-subject {
+  display: none;
+}

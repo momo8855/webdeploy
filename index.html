@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./image/suezCanalUniversityLogo.jpg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <title>Suez Canal Attendance</title>
+  </head>
+  <body>
+    <div class="container" dir="rtl">
+      <!-- popup section -->
+      <!-- generate lec section -->
+      <div class="popup--contaier popup--contaier--add-lec hidden">
+        <div class="popup--body" dir="rtl">
+          <h1 class="popup--body--header">إنشاء محاضرة</h1>
+          <h2 class="create-lec--number">
+            محاضرة <span class="create-lec--number__num"></span>
+          </h2>
+          <input
+            type="text"
+            class="popup--body--input create-lec--details"
+            placeholder="الوصف..."
+          />
+          <label class="create-lec--date--header">تاريخ المحاضرة</label>
+          <input type="date" class="create-lec--date--create" />
+          <div class="popup--button--container">
+            <button class="button button--container__primary button__generate">
+              إنشاء
+            </button>
+            <button class="button button--container__secondary button__cancel">
+              إلغاء
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- add subject section (اضافة مادة) -->
+      <div class="popup--contaier popup--contaier--add-subject hidden">
+        <div class="popup--body">
+          <h1 class="popup--body--header">إضافة مادة</h1>
+          <input
+            type="text"
+            class="popup--body--input create-subject--name"
+            placeholder="أسم المادة...."
+          />
+          <p class="create-subject--date-modefied__header">
+            تاريخ الإنشاء:
+            <span class="create-subject--date-modefied__value">1-1-1111</span>
+          </p>
+          <div class="popup--button--container">
+            <button
+              class="button button--container__primary button__add-subject"
+            >
+              إضافة
+            </button>
+            <button
+              class="button button--container__secondary button__cancel-sbject"
+            >
+              إلغاء
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar--header">
+          <img
+            src="image/suezCanalUniversityLogo-PhotoRoom.png"
+            alt="suez Canal University Logo"
+          />
+          <h1>تسجيل الحضور</h1>
+        </div>
+        <div class="sidebar--professor">
+          <div class="sidebar--professor--img">
+            <img src="./image/professor.png" alt="professor photo" />
+          </div>
+          <h2 class="sidebar--professor-name">أسم الدكتور</h2>
+        </div>
+
+        <div class="subjects">
+          <h1 class="subjects--header">جميع المواد</h1>
+          <ul class="subjects--items" id="refresh"></ul>
+
+          <button class="button subjects--button">اضافة مادة</button>
+        </div>
+      </div>
+
+      <div class="subject hidden">
+        <div class="header--container">
+          <h1 class="subject--header">أسم المادة</h1>
+          <button class="button subject--button-general">نظرة عامة</button>
+          <button class="button subject--button-generat">إنشاء محاضرة</button>
+        </div>
+        <div class="ul--container">
+          <ul class="subject--list">
+            <!-- <li class="subject--lec">
+                <h1>المحاضرة</h1>
+                <p class="subject--lec--number">01</p>
+                <p class="subject--lec--date">13-15-2022</p>
+              </li>
+              <li class="subject--lec">
+                المحاضرة
+                <p class="subject--lec--number">02</p>
+              </li>
+              <li class="subject--lec">
+            المحاضرة
+            
+            <p class="subject--lec--number">03</p>
+          </li> -->
+          </ul>
+        </div>
+      </div>
+
+      <div class="lec hidden">
+        <!-- header lec start -->
+        <div class="section1">
+          <div class="lec-header">
+            <div class="lec-name">
+              <div class="lec-title">
+                المحاضرة <span class="lec--title--number">4</span>
+              </div>
+              <div class="lec-name--subname">
+                محاضرة الاولي نشرح الاشياء التي اريدها
+              </div>
+            </div>
+            <div class="lec-history">
+              <div class="lec-history--name">تاريخ الانشاء :</div>
+              <div class="lec-history--number">2000/1/1</div>
+            </div>
+          </div>
+
+          <!-- header lec End -->
+
+          <!--lec QR Strat -->
+
+          <div class="lec-QR">
+            <div class="lec-QR-img" id="qrcode">
+              <img class="lec-QR-img" src="./image/QRCode.png" alt="photo" />
+            </div>
+
+            <!-- <div class="lec-QR--zoom__QR"> -->
+            <button class="lec-QR--zoom__QR button">تكبير الصورة</button>
+
+            <div class="lec-QR--on_off">
+              <label class="switch">
+                <input type="checkbox" checked />
+                <span class="slider round"></span>
+              </label>
+              تفعيل الحضور
+            </div>
+            <!-- </div> -->
+
+            <!-- <div class="lec-QR--download__QR"> -->
+            <button class="lec-QR--download__QR">تحميل الصورة</button>
+
+            <!-- </div> -->
+
+            <div class="lec-QR--history">
+              <div class="lec-QR--history__name">تاريخ المحاضرة</div>
+              <input
+                type="date"
+                placeholder="1-1-2000"
+                class="lec-QR--history__select"
+              />
+            </div>
+          </div>
+
+          <hr />
+
+          <!--lec QR End -->
+
+          <div class="lec-table">
+            <table class="student--table" dir="ltr">
+              <caption>
+                جدول المحاضرة
+              </caption>
+              <thead>
+                <tr>
+                  <th>المحاضرة</th>
+                  <th>المستوى</th>
+                  <th>الشعبة</th>
+                  <th>القسم</th>
+                  <th class="dir">اسم الطالب</th>
+                </tr>
+              </thead>
+              <tbody class="student--table--body"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="section2 hiddenSection">
+          <div class="general-lec-title">نظرة عامة</div>
+          <div class="container--generaral--table">
+            <table class="body--general--table">
+              <caption class="general-lec-title--header">
+                تركيبات هندسية
+              </caption>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th class="dir">Student Name</th>
+                  <th>Department</th>
+                  <th>Division</th>
+                  <th>Level</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody class="body--general--table--tbody">
+                <!-- <tr>
+                  <td>162600181</td>
+                  <td class="dir">عبدالرحمن احمد غويل</td>
+                  <td>كهرباء</td>
+                  <td>كمبيوتر</td>
+                  <td>5</td>
+                  <td>10</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zoomImg"></div>
+    <div class="overlay hidden"></div>
+    <script src="main.js"></script>
+  </body>
+</html>

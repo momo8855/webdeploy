@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./image/suezCanalUniversityLogo.jpg" />
+    <title>Suez Canal Attendance</title>
+    <link rel="stylesheet" href="login_page.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="center">
+      <div class="h1">
+        <h1>تسجيل الدخول</h1>
+        <img
+          src="/image/suezCanalUniversityLogo.jpg"
+          alt="Suez Canall Univercity logo"
+          class="suezCanalLogo"
+        />
+      </div>
+
+      <form method="post">
+        <div class="txt_field" dir="rtl">
+          <input type="text" class="user--name" required />
+          <span></span>
+          <label>أسم المستخدم </label>
+        </div>
+        <div class="txt_field" dir="rtl">
+          <input type="password" class="user--password" required />
+          <span></span>
+          <label>كلمة المرور</label>
+        </div>
+        <p style="color: red" class="login_value" dir="rtl"></p>
+        <input type="submit" value="تسجيل الدخول" class="form--submit" />
+      </form>
+    </div>
+
+    <script src="./login_page.js" type="module"></script>
+    <script src="./demoParticles/particles.js"></script>
+    <script src="./demoParticles/js/app.js"></script>
+  </body>
+</html>

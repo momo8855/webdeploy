@@ -1,0 +1,33 @@
+.   get doctor data(name - img) and put in page
+
+.   GET subjects (using id of doctor)
+  ..    add subjects to the page (in section1)
+
+.   GET lectures when click on subjects (using id of subject) lecture data (id - number - date - description - title<not using now>)
+  a- add lectures to the page (in section2)
+  b- add data (number - date) (in section2)
+  c- add data (number - date - description) (in section3)
+  d- add data (id) to the qrGeneration fun
+
+
+------------------functions------------------
+.   qrGeneration(id of lec)
+    .. convert id of lec to qr img
+
+
+------------------buttonsClicked------------------
+
+
+--------------click on (المحاضرة)---------------
+.   change style of lec container (subject--lec)
+.   change section3 header 
+    .. date
+    .. number
+    .. description
+.   run qrGeneration() with id of lec
+.   GET attendance of student useing lec id
+    .. update table with student data
+
+------------------stautus------------------
+//!--- problem her (cann't add event to current created item in list)
+//!--- problem her (doesn't remove style for old clicked item)
